@@ -4,14 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OCR Result</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f8f8;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: #555;
+        margin: 10px 0;
+      }
+
+      a {
+        color: #008cba;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      a:hover {
+        color: #00506b;
+      }
+    </style>
   </head>
+
   <body>
     <h1>OCR Result</h1>
     {% if extracted_text %}
     <p>Extracted Text: {{ extracted_text|replace("'", "") }}</p>
     {% elif error %}
-    <p>Error: {{ error }}</p>
+    <p style="color: #ff0000">Error: {{ error }}</p>
     {% endif %}
-    <p><a href="/">Go back to Upload</a></p>
+    <p><a href="/" style="font-weight: bold">Go back to Upload</a></p>
   </body>
 </html>
