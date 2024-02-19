@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCR Result</title>
+  </head>
+  <body>
+    <h1>OCR Result</h1>
+    {% if extracted_text %}
+    <p>Extracted Text: {{ extracted_text|replace("'", "") }}</p>
+    {% elif error %}
+    <p>Error: {{ error }}</p>
+    {% endif %}
+    <p><a href="/">Go back to Upload</a></p>
+  </body>
+</html>
